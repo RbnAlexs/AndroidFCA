@@ -13,17 +13,17 @@
         android:id="@+id/imagenTemperatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/imagen_09d" />
+         />
 
     <TextView
         android:id="@+id/textoTemperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#f9f9f9"
-        android:text="Temperatura: 29°"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="32sp" />
 
 </LinearLayout>
