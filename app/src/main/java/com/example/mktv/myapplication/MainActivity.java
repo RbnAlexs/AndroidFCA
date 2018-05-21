@@ -30,9 +30,16 @@ public class MainActivity extends AppCompatActivity {
         imagenTemperatura = (ImageView) findViewById(R.id.imagenTemperatura);
         final TextView textoTemperatura;
         textoTemperatura = (TextView) findViewById(R.id.textoTemperatura);
+        final TextView textoCiudad;
+        //textoCiudad = (TextView) findViewById(R.id.textoCiudad);
+
+        String ciudad = "3991164";
+        String urlOpenWeather = "http://api.openweathermap.org/data/2.5/weather?id=";
+        String AppID = "7da43a27132645c98bca16b0c26e3369";
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        final String url = "http://api.openweathermap.org/data/2.5/weather?id=5313135&appid=7da43a27132645c98bca16b0c26e3369&units=metric";
+        //String url = ("http://api.openweathermap.org/data/2.5/weather?id=&appid=7da43a27132645c98bca16b0c26e3369&units=metric");
+        String url = urlOpenWeather + ciudad + "&appid=" + AppID + "&units=metric";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response){
@@ -49,7 +56,12 @@ public class MainActivity extends AppCompatActivity {
                             if(response.has("main")){
                                 JSONObject main = response.getJSONObject("main");
                                 Double temp = main.getDouble("temp");
-                                textoTemperatura.setText(("Temperatura actual: " + temp + "\u00b0"));
+                                textoTemperatura.setText((" " + temp + "\u00b0"));
+                            }
+                            if(response.has("name")){
+                                JSONObject name = response.getJSONObject("name");
+                                String ciudad = name.getString("name");
+                                //textoCiudad.setText((ciudad));
                             }
 
                         }catch (JSONException e) {

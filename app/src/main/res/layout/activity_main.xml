@@ -14,16 +14,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          />
-
     <TextView
         android:id="@+id/textoTemperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#f9f9f9"
+        android:background="#14b3f7"
+        android:textColor="#ffffff"
+        android:textSize="65sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="32sp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#14b3f7"
+        android:textColor="#ffffff"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </LinearLayout>
